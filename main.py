@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
 from utils import Model
-import os 
+from flask_cors import CORS
+import os
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 api = Api(app) 
 
 data_med = [
